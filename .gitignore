@@ -4,6 +4,7 @@ Thumbs.db
 # **/*.ai
 # *.ai
 *.psd
+*.mp4
 **/node_modules
 package-lock.json
 /UDEMY
