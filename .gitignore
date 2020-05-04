@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+**/.DS_Store
+# **/*.ai
+# *.ai
+*.psd
+**/node_modules
+package-lock.json
