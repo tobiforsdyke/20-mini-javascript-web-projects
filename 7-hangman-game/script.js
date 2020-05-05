@@ -1,6 +1,6 @@
 const wordEl = document.getElementById('word');
 const wrongLettersEl = document.getElementById('wrong-letters');
-const playAgainBtn = document.getElementById('play-again');
+const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
@@ -8,33 +8,16 @@ const finalMessage = document.getElementById('final-message');
 const figureParts = document.querySelectorAll('.figure-part');
 const eyes = document.querySelectorAll('.figure-part-eye');
 
-const words = ['application', 'beautiful', 'hangman', 'noose', 'actually', 'xylophone', 'instrument', 'poodle', 'pianist', 'hexadecimal', 'monster', 'dinosaur', 'bicycle', 'generator', 'cemetary', 'television', 'microwave', 'hamster', 'grandmother', 'jacket', 'jaguar', 'tree', 'quizzical', 'fruit'];
+// const words = ['application', 'beautiful', 'hangman', 'noose', 'actually', 'xylophone', 'instrument', 'poodle', 'pianist', 'hexadecimal', 'monster', 'dinosaur', 'bicycle', 'generator', 'cemetary', 'television', 'microwave', 'hamster', 'grandmother', 'jacket', 'jaguar', 'tree', 'quizzical', 'fruit'];
+
+const words = ['tree'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
 const wrongLetters = [];
 
-// Show hidden word
-function displayWord() {
-    wordEl.innerHTML = `
-        ${selectedWord
-            .split('')
-            .map(letter => `
-                <span class="letter">
-                    ${correctLetters.includes(letter) ? letter : ''}
-                </span>
-            `)
-            .join('')
-        }
-    `;
 
-    const innerWord = wordEl.innerText.replace(/\n/g, '');
-    if (innerWord === selectedWord) {
-        finalMessage.innerText = 'Congratulations! You Won...';
-        popup.style.display = 'flex';
-    }
-}
 
 // Update the wrong letters
 function updateWrongLettersEl() {
@@ -89,5 +72,43 @@ window.addEventListener('keydown', e => {
         }
     }
 });
+
+
+// Show hidden word
+function displayWord() {
+    wordEl.innerHTML = `
+        ${selectedWord
+            .split('')
+            .map(
+                letter => `
+                    <span class="letter">
+                        ${correctLetters.includes(letter) ? letter : ''}
+                    </span>
+                `
+            )
+        .join('')}
+    `;
+
+    const innerWord = wordEl.innerText.replace(/\n/g, '');
+    if (innerWord === selectedWord) {
+        finalMessage.innerText = 'Congratulations! You Won...';
+        popup.style.display = 'flex';
+    }
+}
+
+// Restart game and play again
+playAgainBtn.addEventListener('click', () => {
+    //  Empty arrays
+    correctLetters.splice(0);
+    wrongLetters.splice(0);
+  
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+  
+    displayWord();
+  
+    updateWrongLettersEl();
+  
+    popup.style.display = 'none';
+  });
 
 displayWord();

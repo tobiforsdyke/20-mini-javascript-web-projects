@@ -35,7 +35,11 @@ h1 {
     margin: 20px 0 0;
 }
 
-.figure-part, .figure-part-eye {
+.figure-part {
+    display: none;
+}
+
+.figure-part-eye {
     display: none;
 }
 
