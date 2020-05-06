@@ -8,9 +8,9 @@ const finalMessage = document.getElementById('final-message');
 const figureParts = document.querySelectorAll('.figure-part');
 const eyes = document.querySelectorAll('.figure-part-eye');
 
-// const words = ['application', 'beautiful', 'hangman', 'noose', 'actually', 'xylophone', 'instrument', 'poodle', 'pianist', 'hexadecimal', 'monster', 'dinosaur', 'bicycle', 'generator', 'cemetary', 'television', 'microwave', 'hamster', 'grandmother', 'jacket', 'jaguar', 'tree', 'quizzical', 'fruit'];
+const words = ['application', 'beautiful', 'hangman', 'noose', 'actually', 'xylophone', 'instrument', 'poodle', 'pianist', 'hexadecimal', 'monster', 'dinosaur', 'bicycle', 'generator', 'cemetary', 'television', 'microwave', 'hamster', 'grandmother', 'jacket', 'jaguar', 'tree', 'quizzical', 'fruit'];
 
-const words = ['tree'];
+// const words = ['tree'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
