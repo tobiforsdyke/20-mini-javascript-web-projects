@@ -4,6 +4,7 @@ const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
+const finalPara = document.getElementById('final-para');
 
 const figureParts = document.querySelectorAll('.figure-part');
 const eyes = document.querySelectorAll('.figure-part-eye');
@@ -38,6 +39,7 @@ function updateWrongLettersEl() {
     // Check if lost
     if (wrongLetters.length === figureParts.length) {
         finalMessage.innerText = 'You Lost!';
+        finalPara.innerText = '';
         popup.style.display = 'flex';
     }
 }
@@ -91,7 +93,9 @@ function displayWord() {
 
     const innerWord = wordEl.innerText.replace(/\n/g, '');
     if (innerWord === selectedWord) {
-        finalMessage.innerText = 'Congratulations! You Won...';
+        // finalMessage.innerText = 'Congratulations! You Won...';
+        finalMessage.innerText = 'Congratulations!';
+        finalPara.innerText = 'You Won...';
         popup.style.display = 'flex';
     }
 }
