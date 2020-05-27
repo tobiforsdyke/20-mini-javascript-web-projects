@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Breakout</title>
 </head>
 <body>
+    <h1>Breakout</h1>
+    <button id="rules-btn" class="btn rules-btn">Show Rules</button>
+    <div id="rules" class="rules">
+        <h2>How to play:</h2>
+        <p>Use the left and right keys (or the Z and X keys) to move the paddle. Bounce the ball upwards to break the blocks.</p>
+        <p>If you miss the ball both your score and the blocks will reset.</p>
+        <button id="close-btn" class="btn">Close</button>
+    </div>
+
+    <canvas id="canvas" width="800" height="600"></canvas>
     
     <script src="script.js"></script>
 </body>
