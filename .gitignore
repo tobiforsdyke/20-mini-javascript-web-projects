@@ -13,3 +13,4 @@ package-lock.json
 /UDEMY
 node_modules
 *.env
+config.env
